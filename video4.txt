@@ -1,0 +1,20 @@
+docker image ls
+
+docker build -t app-express .  ==>  build image
+
+docker rm container1 -f  ==> supprimer
+
+docker ps --all ==> show all container
+
+docker stop container1 ==> stop container
+
+docker run --name container1 -v ${pwd}:/app:ro --env-file ./.env -d -p 4000:4000  app-express ==> build and run container
+
+docker exec -it container1 /bin/sh ==> open terminal of container
+
+docker logs container1 ==> give the log of terminal
+
+###### DOCKER COMPOSE
+
+docker-compose up -d ==> build image and run container  
+docker-compose -f docker-compose.dev.yml up -d --build ==> build from specefic image and run container

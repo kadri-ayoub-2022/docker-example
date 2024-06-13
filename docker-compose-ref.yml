@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app-express:
+    container_name: container1
+    build: .
+    volumes:
+      - .:/app:ro
+    ports:
+      - "4000:4000"
+    environment:
+      - PORT=4000
+      - PATH=/etc/bin
+    env_file:
+      - ./.env

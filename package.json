@@ -1,0 +1,18 @@
+{
+  "name": "learn-dock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "docker.js",
+  "scripts": {
+    "start-dev": "nodemon docker.js",
+    "start": "node docker.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
+  }
+}
