@@ -14,6 +14,7 @@ docker exec -it container1 /bin/sh ==> open terminal of container
 
 docker logs container1 ==> give the log of terminal
 
+docker volume prune ==> delete all volumes not used
 ###### DOCKER COMPOSE
 
 docker-compose up -d ==> build image and run container  
