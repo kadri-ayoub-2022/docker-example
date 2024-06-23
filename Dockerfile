@@ -8,4 +8,3 @@ RUN if ["${NODE_ENV}" ="production"]; \
     fi
 COPY . .
 EXPOSE 4000
-CMD [ "npm","run","start-dev" ]

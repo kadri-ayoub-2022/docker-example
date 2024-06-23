@@ -19,3 +19,5 @@ docker volume prune ==> delete all volumes not used
 
 docker-compose up -d ==> build image and run container  
 docker-compose -f docker-compose.dev.yml up -d --build ==> build from specefic image and run container
+
+docker-compose -f docker-compose.prod.yml push app-express ==> push to docker hub

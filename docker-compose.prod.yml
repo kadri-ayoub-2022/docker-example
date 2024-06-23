@@ -1,7 +1,7 @@
 version: '3'
 services:
   app-express:
-    container_name: container1
+    container_name: kadriayoub/essai
     build: 
       context: .
       args:
@@ -13,3 +13,28 @@ services:
     env_file:
       - ./.env
     command: npm run start
+    depends_on:
+      - mongo
+      - redis
+  mongo:
+    image: mongo
+    restart: always
+    volumes:
+      - mongo-db:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example  
+  redis:
+    image: redis
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app-express
+
+
+volumes:
+  mongo-db:
